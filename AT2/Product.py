@@ -3,7 +3,7 @@ class Product:
     __name: str
     __description: str
     __value: float
-    __subcategories: list()
+    __subcategories: []
     __weight: float
     __height: float
     __width: float
@@ -69,16 +69,38 @@ def insertProduct() -> Product:
 
     prod = Product()
 
+    j = False
     # lenProducts = len(products)
+    while not j:
+        j = True
+        code = input("Product code: ")
+        name = input("Product name: ")
+        value = input("Product Price: ")
+        description = input("Product description: ")
+        weight = input("Product weight: ")
+        heigh = input("Product heigh: ")
+        width = input("Product width: ")
+        length = input("Product length: ")
 
-    prod.set_code(input("Product code: "))
-    prod.set_name(input("Product name: "))
-    prod.set_value(input("Product Price: "))
-    prod.set_description(input("Product description: "))
-    prod.set_weight(input("Product weight: "))
-    prod.set_heigh(input("Product heigh: "))
-    prod.set_width(input("Product width: "))
-    prod.set_length(input("Product length: "))
+        j = validateFloat(value)
+        j = validateFloat(weight)
+        j = validateFloat(heigh)
+        j = validateFloat(width)
+        j = validateFloat(length)
+        j = True if len(description) >= 20 else False
+
+        if j:
+            prod.set_code(code)
+            prod.set_name(name)
+            prod.set_value(value)
+            prod.set_description(description)
+            prod.set_weight(weight)
+            prod.set_heigh(heigh)
+            prod.set_width(width)
+            prod.set_length(length)
+        else:
+            print("Some information has mistake. Please try again.\n")
+
 
     # category = input("Category name: ")
     # criar e chamar metodo para inserir cateria
@@ -87,20 +109,48 @@ def insertProduct() -> Product:
     return prod
 
 
-def updateProduct():
+def updateProduct(product):
     code = input("Please type the product code: ")
+    prod = searchProduct(code, product)
+    j = False
+    # lenProducts = len(products)
+    while not j:
+        j = True
+        code = input("Product code: ")
+        code = code if code != "" else prod.get_code()
+        name = input("Product name: ")
+        name = name if name != "" else prod.get_name()
+        value = input("Product Price: ")
+        value = value if value != "" else prod.get_value()
+        description = input("Product description: ")
+        description = description if description != "" else prod.get_description()
+        weight = input("Product weight: ")
+        weight = weight if weight != "" else prod.get_weight()
+        heigh = input("Product heigh: ")
+        heigh = heigh if heigh != "" else prod.get_heigh()
+        width = input("Product width: ")
+        width = width if width != "" else prod.get_width()
+        length = input("Product length: ")
+        length = length if length != "" else prod.get_length()
 
+        j = validateFloat(value)
+        j = validateFloat(weight)
+        j = validateFloat(heigh)
+        j = validateFloat(width)
+        j = validateFloat(length)
+        j = True if len(description) >= 20 else False
 
-#    lenProducts = len(products)
-#    for i in range(0, lenProducts):
-#        if code == products[i][0]:
-#            name = input("Please type the new product name: ")
-#            category = input("Please type the new category name: ")
-#            value = input("Please type the new price: ")
-
-#            products[i][1] = name if name != "" else products[i][1]
-#            products[i][2] = category if category != "" else products[i][2]
-#            products[i][3] = value if value != "" else products[i][3]
+        if j:
+            prod.set_code(code)
+            prod.set_name(name)
+            prod.set_value(value)
+            prod.set_description(description)
+            prod.set_weight(weight)
+            prod.set_heigh(heigh)
+            prod.set_width(width)
+            prod.set_length(length)
+        else:
+            print("Some information has mistake. Please try again.\n")
 
 
 def deleteProduct(prod):
@@ -135,3 +185,14 @@ def searchProduct(code, prod):
     for i in prod:
         if code == i.get_code():
             return i
+
+
+def validateFloat(number):
+    try:
+        if float(number) > 0:
+            return True
+        else:
+            print("Please, type a value bigger than 0.")
+            return False
+    except ValueError as error:
+        print("Please, type a valid number.")

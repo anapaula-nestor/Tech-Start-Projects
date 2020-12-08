@@ -21,7 +21,7 @@ while choice != 5:
     if choice == 1:
         prodList.append(Product.insertProduct())
     elif choice == 2:
-        Product.updateProduct()
+        Product.updateProduct(prodList)
     elif choice == 3:
         Product.deleteProduct(prodList)
     elif choice == 4:
