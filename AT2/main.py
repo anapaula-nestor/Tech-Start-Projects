@@ -1,20 +1,6 @@
 import Product
 
-
-def insertProd() -> Product:
-    prod = Product()
-    prod.set_name(input("Name: "))
-    prod.set_value(input("insira o valor: "))
-    return prod
-
-
 prodList = []
-
-prodList.append(Product.insertProduct())
-
-for i in prodList:
-    print(i)
-    print(i.get_name())
 
 
 def getAction() -> int:
@@ -27,17 +13,18 @@ def getAction() -> int:
             value = 0
     return int(value)
 
+
 choice = 0
 
 while choice != 5:
     choice = getAction()
     if choice == 1:
-        prodList.append(Product.insertProduct(prodList))
+        prodList.append(Product.insertProduct())
     elif choice == 2:
         Product.updateProduct()
     elif choice == 3:
-        Product.deleteProduct()
+        Product.deleteProduct(prodList)
     elif choice == 4:
-        Product.readProduct()
+        Product.readProduct(prodList)
 
 exit()

@@ -12,7 +12,7 @@ class Product:
     def get_code(self) -> str:
         return self.__code
 
-    def set_name(self, code):
+    def set_code(self, code):
         self.__code = code
 
     def get_name(self) -> str:
@@ -66,14 +66,20 @@ class Product:
 
 def insertProduct() -> Product:
     print("Please fill the information bellow:\n")
-    #code = 0
+
     prod = Product()
-    code = input("Product code: ")
+
     # lenProducts = len(products)
 
-    prod.set_code(code)
+    prod.set_code(input("Product code: "))
     prod.set_name(input("Product name: "))
     prod.set_value(input("Product Price: "))
+    prod.set_description(input("Product description: "))
+    prod.set_weight(input("Product weight: "))
+    prod.set_heigh(input("Product heigh: "))
+    prod.set_width(input("Product width: "))
+    prod.set_length(input("Product length: "))
+
     # category = input("Category name: ")
     # criar e chamar metodo para inserir cateria
     # products.append([code, name, category, value])
@@ -97,16 +103,35 @@ def updateProduct():
 #            products[i][3] = value if value != "" else products[i][3]
 
 
-def deleteProduct():
+def deleteProduct(prod):
     code = input("Please type the product code: ")
+    p = searchProduct(code, prod)
 
-
-#    lenProducts = len(products)
-#    for i in range(0, lenProducts):
-#        if code == products[i][0]:
-#            del products[i]
+    if p is None:
+        print("Product not found.")
+    else:
+        prod.remove(p)
+        print("Product removed successfully.")
 
 
 def readProduct(prod):
+    code = input("Please type the product code: ")
+    p = searchProduct(code, prod)
+
+    if p is None:
+        print("Product not found.")
+    else:
+        print("Code: " + p.get_code())
+        print("Name: " + p.get_name())
+        print("Value: " + p.get_value())
+        print("description: " + p.get_description())
+        print("Weight: " + p.get_weight())
+        print("Heigh: " + p.get_heigh())
+        print("Width: " + p.get_width())
+        print("Length: " + p.get_length())
+
+
+def searchProduct(code, prod):
     for i in prod:
-        print(i)
+        if code == i.get_code():
+            return i
