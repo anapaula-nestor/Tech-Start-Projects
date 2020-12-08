@@ -1,9 +1,12 @@
+import Category
+
+
 class Product:
     __code: int
     __name: str
     __description: str
     __value: float
-    __subcategories: []
+    __categories: list = []
     __weight: float
     __height: float
     __width: float
@@ -33,11 +36,11 @@ class Product:
     def get_value(self) -> str:
         return self.__value
 
-    def set_subcategories(self, subcategories):
-        self.__subcategories = subcategories
+    def set_categories(self, code):
+        self.__categories.append(code)
 
-    def get_subcategories(self):
-        return self.__subcategories
+    def get_categories(self):
+        return self.__categories
 
     def set_weight(self, weight):
         self.__weight = weight
@@ -64,7 +67,7 @@ class Product:
         return self.__length
 
 
-def insertProduct() -> Product:
+def insertProduct(cat, product) -> Product:
     print("Please fill the information bellow:\n")
 
     prod = Product()
@@ -82,12 +85,17 @@ def insertProduct() -> Product:
         width = input("Product width: ")
         length = input("Product length: ")
 
-        j = validateFloat(value)
-        j = validateFloat(weight)
-        j = validateFloat(heigh)
-        j = validateFloat(width)
-        j = validateFloat(length)
-        j = True if len(description) >= 20 else False
+        validate = searchProduct(code, product)
+
+        if validate is None:
+            j = validateFloat(value)
+            j = validateFloat(weight)
+            j = validateFloat(heigh)
+            j = validateFloat(width)
+            j = validateFloat(length)
+            j = True if len(description) >= 20 else False
+        else:
+            j = False
 
         if j:
             prod.set_code(code)
@@ -98,9 +106,19 @@ def insertProduct() -> Product:
             prod.set_heigh(heigh)
             prod.set_width(width)
             prod.set_length(length)
-        else:
-            print("Some information has mistake. Please try again.\n")
 
+            Category.readCategories(cat)
+            print("Please type the category code for the product based on the list above:\n")
+            answer = "y"
+            while answer == "y":
+                code = input("Code: ")
+                prod.set_categories(code)
+                print("Would like to enter another category? Type y(yes) or n(no).")
+                answer = input("Answer: ")
+
+        else:
+            print("Some information has a mistake or you are trying to use a code already registered. Please try "
+                  "again.\n")
 
     # category = input("Category name: ")
     # criar e chamar metodo para inserir cateria
@@ -116,8 +134,8 @@ def updateProduct(product):
     # lenProducts = len(products)
     while not j:
         j = True
-        code = input("Product code: ")
-        code = code if code != "" else prod.get_code()
+        # code = input("Product code: ")
+        # code = code if code != "" else prod.get_code()
         name = input("Product name: ")
         name = name if name != "" else prod.get_name()
         value = input("Product Price: ")
@@ -141,7 +159,7 @@ def updateProduct(product):
         j = True if len(description) >= 20 else False
 
         if j:
-            prod.set_code(code)
+            # prod.set_code(code)
             prod.set_name(name)
             prod.set_value(value)
             prod.set_description(description)
@@ -150,7 +168,8 @@ def updateProduct(product):
             prod.set_width(width)
             prod.set_length(length)
         else:
-            print("Some information has mistake. Please try again.\n")
+            print(
+                "Some information a has mistake. Please try again.\n")
 
 
 def deleteProduct(prod):
@@ -164,7 +183,7 @@ def deleteProduct(prod):
         print("Product removed successfully.")
 
 
-def readProduct(prod):
+def readProduct(prod, cat):
     code = input("Please type the product code: ")
     p = searchProduct(code, prod)
 
@@ -179,6 +198,9 @@ def readProduct(prod):
         print("Heigh: " + p.get_heigh())
         print("Width: " + p.get_width())
         print("Length: " + p.get_length())
+        print("Categories: ")
+        for i in p.get_categories():
+            Category.readCategory(i, cat)
 
 
 def searchProduct(code, prod):
