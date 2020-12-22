@@ -20,9 +20,14 @@ def multiply_two_numbers(number1: float, number2: float) -> float:
 
 
 def divide_two_numbers(number1: float, number2: float) -> float:
-    if validate_numeric(number1) and validate_numeric(number2) and validate_number_not_zero(number2):
-        total = number1 / number2
-        return total
+    try:
+        if validate_numeric(number1) and validate_numeric(number2):
+            total = number1 / number2
+            return total
+    except ZeroDivisionError as e_zero:
+        raise e_zero
+    except Exception as e:
+        raise e
 
 
 def validate_numeric(number: float) -> bool:
@@ -30,8 +35,7 @@ def validate_numeric(number: float) -> bool:
         return True
     raise ValueError(f'Value {number} is not numeric.')
 
-
-def validate_number_not_zero(number: float) -> bool:
-    if number != 0:
-        return True
-    raise ValueError(f'The divisor can not be 0.')
+# def validate_number_not_zero(number: float) -> bool:
+#    if number != 0:
+#        return True
+#    raise ValueError(f'The divisor can not be 0.')
