@@ -37,3 +37,7 @@ while choice != 6:
         catList.append(Category.insertCategory())
 
 exit()
+
+
+
+
