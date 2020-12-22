@@ -14,7 +14,7 @@ back = "<a href='/'>Go back</a>"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', number1=2)
 
 
 @app.route('/sum')
