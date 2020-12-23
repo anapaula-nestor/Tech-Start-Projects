@@ -1,0 +1,11 @@
+{% extends 'template.html' %}
+{% block titulo %} <h2>{{cat}}</h2> {% endblock %}
+{% block body %}
+<ul>
+    {% for i in subcategories %}
+    <li>
+        {{i}}
+    </li>
+    {%  endfor %}
+</ul>
+{% endblock %}

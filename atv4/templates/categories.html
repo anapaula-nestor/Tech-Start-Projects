@@ -1,0 +1,11 @@
+{% extends 'template.html' %}
+{% block titulo %} <h2>{{mp}}</h2> {% endblock %}
+{% block body %}
+<ul>
+    {% for i in categories %}
+    <li>
+        <a href='/subcategories/{{i}}'>{{i}}</a>
+    </li>
+    {%  endfor %}
+</ul>
+{% endblock %}

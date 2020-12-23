@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+{% block body %}
+<ul>
+    {% for i in marketplace %}
+    <li>
+        <a href="/categories/{{i}}">{{i}}</a>
+    </li>
+    {%  endfor %}
+</ul>
+{% endblock %}

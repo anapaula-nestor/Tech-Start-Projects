@@ -14,7 +14,7 @@ back = "<a href='/'>Go back</a>"
 
 @app.route('/')
 def index():
-    return render_template('index.html', number1=2)
+    return render_template('index.html')
 
 
 @app.route('/sum')
@@ -25,7 +25,6 @@ def soma():
     return f'Sum of {number1} and {number2} is equal to  {result}<br>{back}'
 
 
-
 @app.route('/sub')
 def sub():
     number1 = randint(0, 100)
@@ -33,6 +32,7 @@ def sub():
     result = subtract_two_numbers(number1, number2)
     return f' {number1} minus {number2} is equal to  {result}<br>{back}'
     render_tem
+
 
 @app.route('/mul')
 def mul():
@@ -50,4 +50,4 @@ def div():
     return f'{number1} divided by {number2} is equal to  {result}<br>{back}'
 
 
-app.run()
+app.run(debug=True)
