@@ -1,0 +1,35 @@
+[28/12/2020 18:43:32]: teste
+[28/12/2020 19:07:23]: List of Marketplaces visualized
+[28/12/2020 19:07:25]: Categories for Americanas visualized
+[28/12/2020 19:07:27]: Subcategories of Móveis opened for Americanas visualized
+[28/12/2020 19:08:42]: List of Marketplaces visualized
+[28/12/2020 19:08:43]: Categories for Shoptime visualized: ['Móveis']
+[28/12/2020 19:08:45]: Subcategories of Móveis opened for Shoptime visualized: ['Sofá']
+[28/12/2020 19:08:46]: List of Marketplaces visualized
+[28/12/2020 19:11:14]: Categories for Mercado Livre visualized: ['Eletrônicos']
+[28/12/2020 19:11:15]: Subcategories of Eletrônicos opened for Mercado Livre visualized: ['Celular']
+[28/12/2020 19:12:00]: List of Marketplaces visualized
+[28/12/2020 19:12:01]: Categories for Mercado Livre visualized: ['Eletrônicos', 
+[28/12/2020 19:12:01]: Subcategories of Eletrônicos opened for Mercado Livre visualized: ['Celular', 
+[28/12/2020 19:13:02]: List of Marketplaces visualized
+[28/12/2020 19:13:02]: Categories for Shoptime visualized: Móveis, 
+[28/12/2020 19:13:03]: Subcategories of Móveis opened for Shoptime visualized: Sofá, 
+[28/12/2020 19:14:01]: List of Marketplaces visualized
+[28/12/2020 19:14:02]: Categories for Submarino visualized: Eletrônicos 
+[28/12/2020 19:14:04]: Subcategories of Eletrônicos opened for Submarino visualized:  Fone de ouvido 
+[28/12/2020 19:14:24]: List of Marketplaces visualized
+[28/12/2020 19:14:25]: Categories for Shoptime visualized: Móveis 
+[28/12/2020 19:14:26]: Subcategories of Móveis opened for Shoptime visualized: Sofá 
+[28/12/2020 19:14:27]: List of Marketplaces visualized
+[28/12/2020 19:14:42]: Categories for Americanas visualized: Móveis', 'Livros 
+[28/12/2020 19:14:43]: Subcategories of Móveis opened for Americanas visualized: Cama', 'Mesa 
+[28/12/2020 19:15:25]: List of Marketplaces visualized
+[28/12/2020 19:15:38]: Categories for Submarino visualized: Eletrônicos 
+[29/12/2020 08:44:11]: Console: List of Marketplaces visualized
+[29/12/2020 08:44:16]: Console: Marketplace selected: Mercado Livre
+[29/12/2020 08:44:16]: Console: Categories for Mercado Livre visualized: Eletrônicos 
+[29/12/2020 08:44:18]: Console: Subcategories of Eletrônicos opened for Mercado Livre visualized: Celular 
+[29/12/2020 08:44:50]: WEB: List of Marketplaces visualized
+[29/12/2020 08:44:52]: WEB: Categories for Americanas visualized: Móveis', 'Livros 
+[29/12/2020 08:44:53]: WEB: Subcategories of Móveis opened for Americanas visualized: Cama', 'Mesa 
+[29/12/2020 08:44:55]: WEB: List of Marketplaces visualized

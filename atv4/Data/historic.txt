@@ -1,0 +1,7 @@
+Marketplace;Category;Subcategory
+Americanas;Móveis;Cama
+Mercado Livre;Eletrônicos;Celular
+Submarino;Eletrônicos; Fone de ouvido
+Shoptime;Móveis;Sofá
+Americanas;Livros;Mangá
+Americanas;Móveis;Mesa
